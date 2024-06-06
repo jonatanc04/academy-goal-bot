@@ -29,6 +29,12 @@ client.on(Events.MessageCreate, async (message) => {
         
         message.reply(`Y el último de la liga es... <@${winner.id}>. Toca ponerse las pilas...`);
     }
+
+    if (message.content === "$goleador") {
+        const goleadores = ["Willy Glass", "Nelly Raimon", "Soji Okita", "Bai Long", "Edgar Partinus", "Kozoumaru", "Petronio Patti", "Mizukamiya", "Perseus", "Beta"];
+        const goleador = goleadores[Math.floor(Math.random() * goleadores.length)];
+        message.reply(`Y el máximo goleador de la liga es... ¡**${goleador}**! ¡Buena puntería!`);
+    }
 })
 
 client.login(process.env.BOT_TOKEN)
